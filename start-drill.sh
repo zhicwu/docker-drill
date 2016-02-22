@@ -33,7 +33,7 @@ setup_env() {
   : ${ZOOKEEPER:="localhost"}
   : ${LOG_DIR:="$cdir/drill-log"}
 
-  mkdir -p $CONF_DIR $DATA_DIR $LOG_DIR
+  mkdir -p $LOG_DIR
 
   info "Loaded environment variables:"
   info "        CLUSTER_ID = $CLUSTER_ID"

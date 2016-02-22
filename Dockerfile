@@ -24,8 +24,7 @@ RUN wget ${APACHE_BASE_URL}/drill/drill-${DRILL_VERSION}/apache-drill-${DRILL_VE
 	&& tar zxvf *.tar.gz \
 	&& rm -f *.tar.gz \
 	&& ln -s apache-drill-${DRILL_VERSION} ${DRILL_HOME} \
-	&& cd ${DRILL_HOME} \
-	&& cd -
+	&& mv *.jar ${DRILL_HOME}/jars/3rdparty/.
 
 WORKDIR $DRILL_HOME
 
