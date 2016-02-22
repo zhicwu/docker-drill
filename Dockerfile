@@ -31,7 +31,9 @@ WORKDIR $DRILL_HOME
 
 COPY config-and-run.sh ./bin/
 
-RUN chmod +x ./bin/*.sh
+RUN chmod +x ./bin/*.sh \
+	&& sed -i -e 's/nohup \(\$thiscmd .* 2>&1\).*/\1/' $DRILL_HOME/bin/drillbit.sh \
+	&& sed -i -e 's/\(\$command .* 2>&1\).*/\1/' $DRILL_HOME/bin/drillbit.sh
 
 # http://drill.apache.org/docs/ports-used-by-drill/
 # 8047  - Needed for the Drill Web Console

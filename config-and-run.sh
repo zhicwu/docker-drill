@@ -8,7 +8,4 @@ fi
 sed -r -i "s/(zk.connect):(.*)/\1: \"$ZOOKEEPER\"/g" /$DRILL_HOME/conf/drill-override.conf
 sed -r -i "s/(cluster-id):(.*)/\1: \"$CLUSTER_ID\"/g" /$DRILL_HOME/conf/drill-override.conf
 
-#./bin/drill-config.sh
-#./bin/runbit drillbit
 ./bin/drillbit.sh start
-while true;do sleep 5;done
